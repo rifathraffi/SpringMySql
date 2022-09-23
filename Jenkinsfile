@@ -5,7 +5,7 @@ pipeline {
         stages {
             stage('Source') {
                 steps {
-                    git url: 'https://github.com/kparunsagar/mysqljar.git'
+                    git url: 'https://github.com/kparunsagar/pipeline_springboot.git'
                 }
             }
             stage('Build') {
