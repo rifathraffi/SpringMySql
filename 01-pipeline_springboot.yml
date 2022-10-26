@@ -10,6 +10,16 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'arun'
+    subscriptionId: 'f3f0b402-1498-4537-9728-704a780011a0'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'arunRg'
+    location: 'West Central US'
+    templateLocation: 'Linked artifact'
+    deploymentMode: 'Incremental'
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
